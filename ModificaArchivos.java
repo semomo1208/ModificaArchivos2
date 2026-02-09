@@ -173,10 +173,20 @@ public class ModificaArchivos {
                             break;
                         }
                     }
-                    case 3:
+                    case 3: // Mostrar el archivo original/modificado. Función multiuso.
+                        BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
                         System.out.println("\n--- Contenido final del inventario ---");
+                        try {
+                            String ll;
+                            while ((ll = br.readLine()) != null) {
+                                System.out.println(ll);
+                            }
+                            br.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         break;
-                    //Crear un método que muestre el contenido actualizado.
+
                     case 4:
                         System.out.println("Saliendo del programa...");
                         break;
