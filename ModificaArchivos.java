@@ -153,41 +153,46 @@ public class ModificaArchivos {
 
 
             try {
-                switch (opcionMenu){
-                    case 1 -> {//Se llama a la función de crear archivo
+                switch (opcionMenu) {
+                    case 1: {//Se llama a la función de crear archivo
                         System.out.print("Ingrese el nombre/ruta del archivo a crear (ej: inventario.txt): ");
                         rutaArchivo = sc.nextLine().trim();
                         crearArchivoInventario(sc, rutaArchivo);
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         System.out.print("\n¿Deseas modificar el archivo? (S/N): ");
                         String opcion = sc.nextLine().trim().toUpperCase();
 
                         if (opcion.equals("S")) {
                             modificarArchivoInventario(rutaArchivo);
                             System.out.println("Archivo modificado");
+                            break;
                         } else {
                             System.out.println("No se modifica el archivo");
+                            break;
                         }
                     }
-                    case 3 -> System.out.println("\n--- Contenido final del inventario ---");
+                    case 3:
+                        System.out.println("\n--- Contenido final del inventario ---");
+                        break;
                     //Crear un método que muestre el contenido actualizado.
-                    case 4 -> System.out.println("Saliendo del programa...");
+                    case 4:
+                        System.out.println("Saliendo del programa...");
+                        break;
 
-                    default -> System.out.println(" Opción inválida.");
+                    default:
+                        System.out.println(" Opción inválida.");
 
-                    
                 }
-                   
 
             } catch (IOException e) {
                 System.out.println("Error de archivo: " + e.getMessage());
-            } 
-            
-        }while (opcionMenu != 4);
-        
+            }
+
+        } while (opcionMenu != 4);
+
         sc.close();
 
-        
-        }
+    }
 }
